@@ -4,11 +4,13 @@ import { MoveRight } from "lucide-react";
 import SocialIcons from "./SocialIcons";
 import Image from "next/image";
 import Badge from "./Badge";
-import { FaAngular } from "react-icons/fa6";
+import { GiManualJuicer } from "react-icons/gi";
+import { GrProjects } from "react-icons/gr";
+import { GiSkills } from "react-icons/gi";
 
 const Hero = () => {
   return (
-    <section className="max-padd-container py-20 bg-[#fdf3fb] dark:bg-transparent">
+    <section className="max-padd-container py-50 bg-[#fdf3fb] dark:bg-transparent">
       <div className="flexCenter gap-24 flex-col md:flex-row">
         {/* Left */}
         <div className="flex flex-1 flex-col pt-12 xl:pt-32">
@@ -34,23 +36,34 @@ const Hero = () => {
           </div>
         </div>
         {/* Right */}
-        <div className="justify-center">
-          <div>
-            <Image
-              src={"/user.jpg"}
-              alt="Hero"
-              height={450}
-              width={450}
-              className="drop-shadow-sm rounded-full"
-            />
-          </div>
-          <div className="hidden xl:flex relative">
+        <div className="relative flexCenter">
+          <Image
+            src={"/user.jpg"}
+            alt="Hero"
+            height={450}
+            width={450}
+            className="drop-shadow-sm rounded-full"
+          />
+          <div className="absolute top-0 left-0 hidden xl:flex items-center justify-center w-full h-full">
             <Badge
-              containerStyles={"absolute top-[60%] justify-center"}
-              icon={<FaAngular />}
-              badgeText="Project Completed"
-              endCountNum={15}
+              containerStyles={"absolute top-[50%] left-[2%]"}
+              badgeText="Projects Completed"
+              endCountNum={99}
               endCountText="k"
+              icon={<GrProjects />}
+            />
+            <Badge
+              containerStyles={"absolute -top-[10%] left-[45%]"}
+              icon={<GiSkills />}
+            />
+            <Badge
+              containerStyles={"absolute top-[50%] right-[2%]"}
+              badgeText="Companies"
+              endCountNum={3}
+              icon={<GiManualJuicer />}
+            />
+            <Badge
+              containerStyles={"absolute top-[80%] left-[30%]"}
               reviewCount={168}
             />
           </div>

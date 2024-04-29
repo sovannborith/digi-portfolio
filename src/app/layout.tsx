@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`h-[2000px] ${poppins.className}`}>
+      <body className={`${poppins.className}`}>
         <Header />
         {children}
       </body>
