@@ -5,12 +5,12 @@ import { Label } from "@/components/ui/label";
 import { RegisterLink } from "@kinde-oss/kinde-auth-nextjs/components";
 import { getKindeServerSession } from "@kinde-oss/kinde-auth-nextjs/server";
 import React, { Suspense } from "react";
-import UserForm from "../components/UserForm";
-import prisma from "../lib/db";
+import UserForm from "../../components/UserForm";
+import prisma from "../../lib/db";
 import {
   LoadingGuestbookForm,
   LoadingMessage,
-} from "../components/LoadingState";
+} from "../../components/LoadingState";
 
 async function getGuestBrookEntry() {
   // noStore();
