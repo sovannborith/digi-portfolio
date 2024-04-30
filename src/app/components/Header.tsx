@@ -1,9 +1,9 @@
 "use client";
 import NavBar from "./NavBar";
 import Logo from "./Logo";
-import ThemeToggler from "./ThemeToggler";
 import MobileNav from "./MobileNav";
 import { useEffect, useState } from "react";
+import { Button } from "@/components/ui/button";
 
 const Header = () => {
   const [header, setHeader] = useState<boolean>(false);
@@ -21,22 +21,26 @@ const Header = () => {
   return (
     <header
       className={`${
-        header ? "shadow-md dark:!bg-secondary" : ""
-      } sticky top-0 py-2 z-30 transition-all max-padd-container flexBetween bg-[#fdf3fb] dark:bg-gransparent`}
+        header ? "shadow-md" : ""
+      } sticky top-0 py-2 z-30 transition-all max-padd-container flexBetween bg-primaryBgColor`}
     >
       {/* Logo */}
       <Logo />
       <div className="flexCenter gap-x-3">
         {/* Navbar */}
         <NavBar
-          containerStyles={"hidden md:flex gap-x-5 capitalize"}
+          containerStyles={"hidden md:flex gap-x-1 capitalize"}
           linkStyles={"relative"}
-          underlineStyles={
-            "absolute left-0 top-full h-[2px] w-full bg-primary rounded-full"
-          }
+          underlineStyles={`absolute left-0 top-full h-[2px] w-full bg-basedBgColor rounded-full`}
         />
-        {/* ThemeToggler */}
-        <ThemeToggler />
+        <div className="">
+          <Button
+            variant="outline"
+            className="hidden md:block border-basedBgColor hover:bg-basedBgColor hover:text-primaryBgColor transition-colors duration-500"
+          >
+            Contact Me
+          </Button>
+        </div>
         <div className="md:hidden">
           <MobileNav />
         </div>

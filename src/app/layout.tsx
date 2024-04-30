@@ -1,7 +1,7 @@
 import type { Metadata } from "next";
 import { Poppins } from "next/font/google";
 import "./styles/globals.css";
-import Header from "@/components/Header";
+import Header from "@/app/components/Header";
 
 const poppins = Poppins({
   subsets: ["latin"],
@@ -11,7 +11,7 @@ const poppins = Poppins({
 
 export const metadata: Metadata = {
   title: "Sovannborith Digital Portfolio",
-  description: "Sovannborith Digital Portfolio",
+  description: "Illustrates Sovannborith's education, experiences, portfolio",
 };
 
 export default function RootLayout({
@@ -21,7 +21,7 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={`${poppins.className}`}>
+      <body className={`bg-primaryBgColor ${poppins.className}`}>
         <Header />
         {children}
       </body>

@@ -1,0 +1,117 @@
+:root {
+  --bar-width: 18px;
+  --bar-height: 2px;
+  --hamburger-gap: 4px;
+  --foreground: #333;
+  --background: ##028500;
+  --hamburger-margin: 4px;
+  --animation-timing: 400ms ease-in-out;
+  --hamburger-height: calc(var(--bar-height) * 3 + var(--hamburger-gap) * 2);
+  --padding: 10px;
+  --screen-width: 100%;
+  --seconday-bg-color: #ff6e6e;
+}
+
+.mobile-side-menu {
+  min-width: 24px;
+  max-width: 24px;
+  min-height: 24px;
+  max-height: 24px;
+  border-radius: 2px;
+  cursor: pointer;
+  position: relative;
+  /* background-image: linear-gradient(to right, #028000, #026000); */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.mobile-side-menu div {
+  width: 16px;
+  height: 16px;
+  position: relative;
+  margin: 2px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.mobile-side-menu div span {
+  background-color: #026000;
+  height: 2px;
+  border-radius: 2px;
+  display: block;
+  position: absolute;
+  transition: transform var(--animation-timing), width var(--animation-timing),
+    translate var(--animation-timing);
+}
+.mobile-side-menu div span.line-1 {
+  translate: -50% -5px;
+  width: 60%;
+}
+.mobile-side-menu div span.line-2 {
+  width: 110%;
+}
+.mobile-side-menu div span.line-3 {
+  width: 60%;
+  translate: 50% 5px;
+}
+.open-menu .line-1 {
+  transform: translate(1px, 2px) rotate(45deg);
+}
+.open-menu .line-2 {
+  transform: translate(-1px, 0px) rotate(-45deg);
+}
+.open-menu .line-3 {
+  transform: translate(-3px, -2px) rotate(45deg);
+}
+
+.sidebar {
+  position: fixed;
+  top: 50px;
+  right: 0;
+  min-width: 100%;
+  min-height: 100vh;
+  transform: translateX(100%);
+  transition: transform var(--animation-timing);
+  z-index: 999;
+  background-color: #fffafa;
+  border-top-width: 1px;
+  border-top-color: #fafafa;
+}
+.menu-open {
+  transform: translateX(0%);
+}
+.navItem {
+  background-color: #fffafa;
+  transition: all var(--animation-timing);
+}
+
+.navItem::before,
+.navItem::after {
+  content: attr(href);
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 100%;
+  background-color: #f0f0f0;
+  width: 0;
+  transition: all var(--animation-timing);
+  z-index: -1;
+}
+.navItem:hover {
+  transform: translateX(5px);
+}
+.navItem:hover::before {
+  width: 100%;
+  transition-duration: 0.5s;
+}
+
+.navLink .icon {
+  width: 16px;
+  height: 16px;
+}
+.navLink:hover a,
+.navLink:hover .icon {
+  color: #026000;
+  font-weight: bold;
+}

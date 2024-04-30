@@ -1,7 +1,7 @@
-import { LINKS } from "@/constant/data";
 import Link from "next/link";
 import { usePathname } from "next/navigation";
 import { motion } from "framer-motion";
+import { LINKS } from "@/constant/link";
 
 interface Props {
   containerStyles: string;
@@ -17,7 +17,11 @@ const NavBar = ({ containerStyles, linkStyles, underlineStyles }: Props) => {
         <Link
           href={link.path}
           key={i}
-          className={`${linkStyles} ${link.path === path ? " bold-16" : ""}`}
+          className={`text-[14px] ${linkStyles}  ${
+            link.path === path
+              ? "font-semibold"
+              : " px-3 py-[2px] hover:bg-grayBgHover rounded-sm transition-colors duration-500"
+          }`}
         >
           {link.path === path && (
             <motion.span

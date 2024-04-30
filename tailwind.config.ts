@@ -18,14 +18,27 @@ const config = {
       },
     },
     extend: {
+      fontFamily: {
+        poppins: "var(--font-poppins)",
+      },
       colors: {
-        gray: {
-          10: "#EEEEEE",
-          20: "#A2A2A2",
-          30: "#7B7B7B",
-          50: "#585858",
-          90: "#141414",
+        primaryBgColor: "#fffafa",
+        secondaryBgColor: "#fafafa",
+        grayBgColor: "#e0e0e0",
+        grayBgHover: "#f0f0f0",
+        accentBgColor: {
+          DEFAULT: "#ed1d24",
+          hover: "#d6001c",
         },
+        basedBgColor: {
+          DEFAULT: "#026000",
+          hover: "#028000",
+        },
+        primaryTextColor: "#555555",
+        secondaryTextColor: "#808080",
+        extraLight: "#a0a0a0",
+        accentTextColor: "#d6001c",
+        basedTextColor: "#026000",
         border: "hsl(var(--border))",
         input: "hsl(var(--input))",
         ring: "hsl(var(--ring))",
@@ -60,12 +73,6 @@ const config = {
           foreground: "hsl(var(--card-foreground))",
         },
       },
-      backgroundImage: {},
-      screens: {
-        xs: "400px",
-        "3xl": "1680px",
-        "4xl": "2200px",
-      },
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
@@ -87,7 +94,13 @@ const config = {
       },
     },
   },
-  plugins: [require("tailwindcss-animate")],
+  corePlugins: {
+    aspectRatio: false,
+  },
+  plugins: [
+    require("tailwindcss-animate"),
+    require("@tailwindcss/aspect-ratio"),
+  ],
 } satisfies Config;
 
 export default config;
