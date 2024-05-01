@@ -67,7 +67,7 @@
 
 .sidebar {
   position: fixed;
-  top: 50px;
+  top: 65px;
   right: 0;
   min-width: 100%;
   min-height: 100vh;
@@ -75,8 +75,8 @@
   transition: transform var(--animation-timing);
   z-index: 999;
   background-color: #fffafa;
-  border-top-width: 1px;
-  border-top-color: #fafafa;
+  border-top-width: 2px;
+  border-top-color: #f0f0f0;
 }
 .menu-open {
   transform: translateX(0%);

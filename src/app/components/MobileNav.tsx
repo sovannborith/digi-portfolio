@@ -72,13 +72,6 @@ const MobileNav = () => {
               </li>
             ))}
             <li className="flext flext-1 w-full mb-[5px] px-[10px] self-end absolute bottom-[180px]">
-              {/* <ClerkButton
-                isSignedIn={isSignedIn}
-                onClick={() => {
-                  handleProfileClick();
-                  setMenuOpen(false);
-                }}
-              /> */}
               <div
                 className="w-full flexCenter p-5 bg-basedBgColor hover:bg-basedBgColor-hover text-primaryBgColor rounded-md cursor-pointer"
                 onClick={() => setMenuOpen(false)}

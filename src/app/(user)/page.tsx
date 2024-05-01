@@ -1,10 +1,17 @@
 import Hero from "@/app/components/Hero";
-import Image from "next/image";
+import Tools from "../components/Tools";
+import FavoriteProject from "../components/FavoriteProject";
+import Footer from "../components/Footer";
+import AboutSection from "../components/AboutSection";
 
 export default function Home() {
   return (
-    <main className="w-full h-full">
+    <section className="max-padd-container">
       <Hero />
-    </main>
+      <Tools />
+      <AboutSection />
+      <FavoriteProject />
+      <Footer />
+    </section>
   );
 }

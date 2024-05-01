@@ -22,7 +22,7 @@ const Header = () => {
     <header
       className={`${
         header ? "shadow-md" : ""
-      } sticky top-0 py-2 z-30 transition-all max-padd-container flexBetween bg-primaryBgColor`}
+      } sticky top-0 py-1 z-30 transition-all max-padd-container flexBetween bg-primaryBgColor`}
     >
       {/* Logo */}
       <Logo />
@@ -31,7 +31,7 @@ const Header = () => {
         <NavBar
           containerStyles={"hidden md:flex gap-x-1 capitalize"}
           linkStyles={"relative"}
-          underlineStyles={`absolute left-0 top-full h-[2px] w-full bg-basedBgColor rounded-full`}
+          underlineStyles={`absolute -z-10 left-0 top-full h-[2px] w-full bg-basedBgColor rounded-full`}
         />
         <div className="">
           <Button

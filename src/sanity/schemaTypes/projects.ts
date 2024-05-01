@@ -23,7 +23,14 @@ export default defineType({
       title: "Summary",
       type: "string",
     },
-
+    {
+      name: "project_type",
+      title: "Project Type",
+      type: "string",
+      options: {
+        list: ["Front-End", "Back-End", "Full-Stack", "Mobile App"], // Add your color options
+      },
+    },
     {
       name: "technologies",
       title: "Technologies",
