@@ -50,7 +50,10 @@ const Tools = () => {
                 </h2>
                 <div className="flex flex-row flex-wrap mt-3 gap-3">
                   {tech[1].map((tool, i) => (
-                    <div className="group flex items-center justify-center p-2 rounded-md bg-secondaryBgColor hover:shadow-md transition-all duration-300">
+                    <div
+                      key={i}
+                      className="group flex items-center justify-center p-2 rounded-md bg-secondaryBgColor hover:shadow-md transition-all duration-300"
+                    >
                       <Image
                         src={tool}
                         alt=""
