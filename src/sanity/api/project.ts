@@ -12,3 +12,15 @@ export async function getAllProject() {
     }
   );
 }
+
+export async function getFavoriteProject() {
+  return client.fetch(
+    groq`*[_type=="tbl_project"] | order(_createdAt desc)[0...2]{_id,title,summary,"imgUrl":image.asset->url, linkToBuild,technologies[]->{_id,title,"imgUrl":image.asset->url}}`,
+    {},
+    {
+      next: {
+        revalidate: 600,
+      },
+    }
+  );
+}

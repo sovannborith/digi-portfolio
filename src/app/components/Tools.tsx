@@ -1,4 +1,4 @@
-import React from "react";
+"use client";
 
 import square from "../../../public/square.svg";
 import {
@@ -18,6 +18,8 @@ const Tools = () => {
   const teches = TECHES;
   const socials = SOCIALS;
 
+  const tools = Object.entries(teches);
+
   return (
     <div className="grid gird-cols-1 lg:grid-cols-3 gap-4 mt-10">
       <div className="w-full relative col-span-1">
@@ -25,22 +27,47 @@ const Tools = () => {
           src={square}
           alt="square"
           className="w-full h-full object-cover rounded-2xl"
+          priority
         />
       </div>
       <div className="flex flex-col w-full col-span-1 lg:col-span-2 gap-4">
         <Card className="bg-grayBgHover border-none">
           <CardHeader>
-            <CardTitle className="text-primaryTextColor">
-              Explore my stack
+            <CardTitle className="text-primaryTextColor font-medium">
+              Explore my tech stack
             </CardTitle>
             <CardDescription>Check out the tools i use daily</CardDescription>
           </CardHeader>
-          <CardContent className="flex flex-wrap gap-4"></CardContent>
+          <CardContent className="flexCenter flex-wrap gap-4">
+            {/* Ai */}
+            {tools.map((tech, index) => (
+              <div
+                key={index + tech[0]}
+                className="flex flex-col justify-start bg-primaryBgColor p-4 w-full rounded-md"
+              >
+                <h2 className="capitalize font-semibold text-[16px] text-primaryTextColor">
+                  {tech[0]}
+                </h2>
+                <div className="flex flex-row flex-wrap mt-3 gap-3">
+                  {tech[1].map((tool, i) => (
+                    <div className="group flex items-center justify-center p-2 rounded-md bg-secondaryBgColor hover:shadow-md transition-all duration-300">
+                      <Image
+                        src={tool}
+                        alt=""
+                        key={i}
+                        className="w-[50px] h-[50px] object-cover rounded-full group-hover:scale-110 transition-transform duration-300"
+                      />
+                    </div>
+                  ))}
+                </div>
+              </div>
+            ))}
+          </CardContent>
         </Card>
 
         <Card className="bg-grayBgHover border-none">
           <CardHeader>
-            <CardTitle className="text-primaryTextColor">
+            <CardTitle className="text-primaryTextColor font-medium">
               Follow me on social media
             </CardTitle>
           </CardHeader>
@@ -61,21 +88,6 @@ const Tools = () => {
             ))}
           </CardContent>
         </Card>
-
-        {/* <div className="flex flex-col w-full gap-4">
-          <h1 className="">Follow me on social media</h1>
-          <Card className="p-4 flex flex-row items-center justify-center gap-x-5 w-full bg-grayBgHover border-none">
-            {socials.map((item) => (
-              <Link
-                href={item.link}
-                key={item.id}
-                className="bg-primaryBgColor p-3 rounded-sm hover:shadow-md"
-              >
-                <Image src={item.icon} alt={item.name} className="w-16 h-16" />
-              </Link>
-            ))}
-          </Card>
-        </div> */}
       </div>
     </div>
   );
